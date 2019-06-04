@@ -1,0 +1,51 @@
+﻿@* @model _20190505.Models.Class1 *@
+
+@using _20190505.Models
+@model Class1
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index2</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Class1</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(m => m.UserName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(m =>m.UserName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UserSex)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UserSex)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

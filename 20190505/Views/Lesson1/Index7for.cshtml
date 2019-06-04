@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index7for</title>
+</head>
+<body>
+    <div> 
+        <div>
+            <h3>for 迴圈</h3>
+            <hr /><br />
+
+            @for (var i = 8; i < 16; i++)
+            {
+                <font style="font-size: @(i + "pt")">字體大小 font-size： @i pt</font> <br />
+            }
+
+
+            <br /><br /><br />
+            <h3>Request.ServerVariables</h3>
+            <hr /><br />
+            <ul>
+                @foreach (var myItem in Request.ServerVariables)
+            {
+                    <li>@myItem.ToString()</li>
+                }
+            </ul>
+
+
+        </div>
+    </div>
+</body>
+</html>
